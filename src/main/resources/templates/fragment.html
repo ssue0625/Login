@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+</head>
+<body>
+	<main th:fragment="header" >
+	  <header class="p-3 bg-dark text-white">
+	    <div class="container">
+	      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+	        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+	          <li><a th:href="@{/}" class="nav-link px-2 text-secondary">Home</a></li>
+	        </ul>
+	
+	        <div class="text-end">
+	          <a th:href="@{/user/sign-in}" sec:authorize="isAnonymous()" class="btn btn-outline-light me-2">Sign-in</a>
+	          <a th:href="@{/user/sign-up}" sec:authorize="isAnonymous()" class="btn btn-warning">Sign-up</a>
+	          <a th:href="@{/user/sign-out}" sec:authorize="isAuthenticated()" class="btn btn-outline-light me-2">Sign-out</a>
+	        </div>
+	      </div>
+	    </div>
+	  </header>
+	  <br>
+	</main>
+</body>
+</html>
